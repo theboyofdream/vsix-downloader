@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vsCode extension downloader</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <form>
+        <span style="display: flex; align-items: baseline">
+            <h1>ッ</h1>
+            <h4><a href="https://github.com/theboyofdream">github</a></h4>
+        </span>
+        <label for="url">Enter vsCode extension link:</label>
+        <input type="url" name="url" id="url" placeholder="Enter/Paste extension link here..." required autofocus
+            autocomplete="url" />
+
+        <button type="submit">
+            <span class="spinner"></span>
+            Download
+        </button>
+        <small>
+            <a
+                href="https://code.visualstudio.com/docs/configure/extensions/extension-marketplace#_install-from-a-vsix">Install
+                vsCode extension manually docs</a>
+        </small>
+    </form>
+    <small style="max-width: 360px">
+        <p>
+            <span>Example url:</span>
+            <a href="http://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja">
+                https://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja</a>
+        </p>
+    </small>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
