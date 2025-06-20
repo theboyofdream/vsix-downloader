@@ -86,3 +86,32 @@ $("form").addEventListener("submit", (e) => {
     e.preventDefault();
     downloadVsixFromLink(e.target.url.value);
 });
+
+function Theme() {
+    return {
+        init() {
+            this.set(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+            window.matchMedia("(prefers-color-scheme: dark)")
+                .addEventListener("change", () => {
+                    this.set(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+                })
+        },
+        /**
+         * @param {"light"|"dark"} theme 
+         */
+        set(theme) {
+            if (theme === "light") {
+                $("body").classList.remove("dark")
+                $("#theme-btn span").textContent = "light"
+            } else {
+                $("body").classList.add("dark")
+                $("#theme-btn span").textContent = "dark"
+            }
+        },
+        toggle() {
+            this.set($("body").classList.contains("dark") ? "light" : "dark")
+        }
+    }
+}
+const theme = Theme()
+theme.init()
